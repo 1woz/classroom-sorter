@@ -305,3 +305,34 @@ span {
     font-weight: 800;
     color: #849a61;
 }
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file-upload {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 2rem;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+.file-upload > button {
+    margin: 1rem 1rem;
+}
+
+.file-upload-input {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 0.5rem;
+}
+
+.file-upload-input > input {
+    width: 60px;
+}
+

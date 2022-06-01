@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import './App.css';
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import GroupView from "./components/GroupView";
 import RosterView from "./components/RosterView";
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [isGroupView, setIsGroupView] = useState(false);
@@ -12,45 +12,57 @@ function App() {
   const [students, setStudents] = useState([]);
   const [groupNo, setGroupNo] = useState();
 
-  useEffect(() => {
-  }, [])
-  const  handleCreateGroups = (groupNo) => {
+  useEffect(() => {}, []);
+  const handleCreateGroups = (groupNo) => {
     //hit sorting endpoint
-    fetch(`api/students/sort/${groupNo}`,  {
-      method:"PUT",
+    fetch(`api/students/sort/${groupNo}`, {
+      method: "PUT",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-    })
-      .then(() => {
-        fetch("/api/students/joined")
-      .then(response => response.json())
-      .then(students => {
-        setStudents(students);
-      })
+    }).then(() => {
+      fetch("/api/students/joined")
+        .then((response) => response.json())
+        .then((students) => {
+          setStudents(students);
+        })
         .then(() => {
           setGroupNo(groupNo);
-    setIsGroupView(true);
-    setIsBannerView(false)
+          setIsGroupView(true);
+          setIsBannerView(false);
         })
-      .catch(error => {
-        console.log(error);
-      });
-      })
-  }
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  };
 
-  const changeBannerView = ()=> {
-    setIsBannerView(state => !state)
-  }
+  const changeBannerView = () => {
+    setIsBannerView((state) => !state);
+  };
 
   const changeGroupView = () => {
-    setIsGroupView(state => !state)
-  }
+    setIsGroupView((state) => !state);
+  };
   return (
     <div className="app">
-      {/* <Navbar /> */}
+      <Navbar />
+
       {isBannerView ? <Banner switchToRoster={changeBannerView} /> : ""}
-      {isGroupView ? <GroupView  students={students} groupNo = {groupNo} switchToRoster={changeGroupView}/> : <RosterView createGroups={(groupNo) => handleCreateGroups(groupNo)} switchToGroups={changeGroupView} /> }
+      {isGroupView ? (
+        <GroupView
+          students={students}
+          groupNo={groupNo}
+          switchToRoster={changeGroupView}
+
+        />
+      )  : ( 
+        <RosterView
+          createGroups={(groupNo) => handleCreateGroups(groupNo)}
+          switchToGroups={changeGroupView}
+        />
+      )
+      }
     </div>
   );
 }

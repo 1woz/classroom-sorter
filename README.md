@@ -36,13 +36,13 @@ This app is a tool for teachers and administrators in schools. A user will input
 
 ### Database Prep
 - Access the MySQL interface in your terminal by running 'mysql -u root -p'
-- Create a new database called students: 'create database sorter;'
+- Create a new database called sorter: 'create database sorter;'
 - Add a '.env' file to the project directory containing MySQL authentication, for example:
 
 ```bash
   DB_HOST=127.0.0.1
   DB_USER=root
-  DB_NAME=facebook
+  DB_NAME=sorter
   DB_PASS=YOURPASSWORD
 ```
 
