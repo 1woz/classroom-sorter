@@ -13,7 +13,7 @@ export default function RosterView(props) {
 
   useEffect(() => {
     getStudents();
-  }, [students]);
+  }, [student]);
 
   const getStudents = () => {
     fetch("/api/students/joined")
@@ -206,7 +206,7 @@ export default function RosterView(props) {
           {/* File Upload */}
           <Form.Group controlId="formFile" className="mb-3 text-center">
             <div className="file-upload">
-              <Form.Label>File Upload</Form.Label>
+              <Form.Label>CSV File Upload</Form.Label>
               <Form.Control onChange={onChangeFile} type="file" />
               <button type="submit" onClick={handleSubmitFile}>
                 Upload Document

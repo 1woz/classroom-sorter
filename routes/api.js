@@ -25,6 +25,7 @@ const sendAllStudentsJoined = (req, res) => {
     .catch((err) => res.status(500).send(err));
 };
 
+// multer config
 const diskstorage = multer.diskStorage({
   destination: path.join(__dirname, "../files"),
   filename: (req, file, cb) => {
@@ -89,7 +90,7 @@ router.post("/students", (req, res) => {
     });
 });
 
-// add CSV file, read and save the data in db
+// upload CSV file, read the data and save in db, return join table
 
 router.post("/students/file", fileUpload, (req, res) => {
   console.log(req.file.filename);
@@ -102,7 +103,6 @@ router.post("/students/file", fileUpload, (req, res) => {
     .pipe(csv())
     .on("data", (data) => results.push(data))
     .on("end", () => {
-      // console.log(results);
 
       for (let i = 0; i < results.length; i++) {
         console.log(results[i]);
@@ -110,7 +110,7 @@ router.post("/students/file", fileUpload, (req, res) => {
           (results[i].has_goal_one === "true") +
           (results[i].has_goal_two === "true") +
           (results[i].has_goal_three === "true");
-        // console.log(score);
+        console.log(score);
         db(
           `INSERT INTO students (first_name, last_name) VALUES ("${results[i].first_name}", "${results[i].last_name}");`
         )

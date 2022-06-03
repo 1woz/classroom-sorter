@@ -2,7 +2,6 @@
 
 This app is a tool for teachers and administrators in schools. A user will input student names and behavioral data for those students. The app will then sort students into classes, spreading behavioral attributes evenly between the classes. 
 
-
 ## Architecture
 
 ## Front-End
@@ -13,7 +12,6 @@ This app is a tool for teachers and administrators in schools. A user will input
 ### Wireframe
 ![Wireframe](readme-assets/wireframe.png)
 
-
 ## Back-End
 
 ### Database Schema
@@ -21,12 +19,6 @@ This app is a tool for teachers and administrators in schools. A user will input
 
 ### API Routes
 ![API Routes 1](readme-assets/mvp-api-routes.png)
-
-
-
-
-
-
 
 ## Setup
 
@@ -49,7 +41,7 @@ This app is a tool for teachers and administrators in schools. A user will input
 - In a new terminal: in the project directory run 'npm run migrate' to create tables within the sorter database
 - To view structure of tables, in MySQL console:
     - 'use sorter;'
-    - 'describe students'
+    - 'describe students;'
 
 ### Development
 - BACKEND TERMINAL: in project directory run 'npm start' (runs on port 5000)

@@ -1,3 +1,5 @@
 first_name,last_name,has_goal_one,has_goal_two,has_goal_three
-iwona,ozimek,true,false,false
+iwona,ozimek,true,true,true
+hannah,willows,false,true,false
+maria,bia,true,true,false
 elisa,rotger,false,true,true
