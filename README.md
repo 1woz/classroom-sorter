@@ -47,5 +47,9 @@ This app is a tool for teachers and administrators in schools. A user will input
 - BACKEND TERMINAL: in project directory run 'npm start' (runs on port 5000)
 - FRONTEND TERMINAL: 'cd client' then 'npm start' (runs on port 3000)
 
+### Notes
+
+_This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
+
 
     

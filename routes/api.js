@@ -95,7 +95,7 @@ router.post("/students", (req, res) => {
 router.post("/students/file", fileUpload, (req, res) => {
   console.log(req.file.filename);
 
-  console.log(path.join(__dirname, "../files/" + req.file.filename));
+  // console.log(path.join(__dirname, "../files/" + req.file.filename));
 
   let results = [];
 
